@@ -36,7 +36,7 @@ Resources:
         - Arn
       Events:
         GetEvent:
-          Type: Api
+          Type: HttpApi
           Properties:
             Path: /
             Method: get
@@ -51,12 +51,7 @@ Resources:
         Fn::GetAtt:
         - LambdaExecutionRole
         - Arn
-      Events:
-        PostEvent:
-          Type: Api
-          Properties:
-            Path: /
-            Method: post
+
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role
